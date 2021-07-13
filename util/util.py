@@ -23,7 +23,6 @@ def calcBTCPrice(amount, orderbook):
     if amount < 0:
         raise Exception('Cannot buy negative amount of Bitcoin')
     for offer in orderbook:
-        print(amount)
         restToBuy = amount
         amount -= offer[1]
         if amount <= 0:

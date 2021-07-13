@@ -4,6 +4,7 @@ from rest_framework.renderers import JSONRenderer
 import io
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponseForbidden
 from util.util import getJSONFromURL, calcBTCPrice
 
 
@@ -15,15 +16,11 @@ def post(request, format='json'):
         jsonData = request.body
         stream = io.BytesIO(jsonData)
         amount = JSONParser().parse(stream)['buy']
-        print(amount)
         orderbook = getJSONFromURL('https://bitbay.net/API/Public/BTCPLN/orderbook.json')
-        print(orderbook['asks'])
         res = {'price': calcBTCPrice(amount, orderbook['asks'])}
         json_data = JSONRenderer().render(res)
 
         return HttpResponse(json_data, content_type='application/json')
     else:
-        res = {'msg': 'XDD22'}
-        json_data = JSONRenderer().render(res)
-        return HttpResponse(json_data, content_type='application/json')
+        return HttpResponseForbidden()
 # Create your views here.
