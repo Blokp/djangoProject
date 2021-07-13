@@ -1,3 +1,3 @@
- docker build -t registry.heroku.com/protected-tor-17184/web .
- docker push registry.heroku.com/protected-tor-17184/web
- heroku container:release -a protected-tor-17184 web
+ docker build -t registry.heroku.com/immense-depths-60108/web .
+ docker push registry.heroku.com/immense-depths-60108/web
+ heroku container:release -a immense-depths-60108 web
