@@ -1,5 +1,5 @@
 ## General info
-Simple app written in django to check current BTC price and sort list of people and hashing information about them
+Simple app written in Django to check current BTC price, hash information about people and sort them by name and surname
 
 ## Setup
 To run server locally, clone repo and run start_local.sh script. Installed Docker is required to run the app.
