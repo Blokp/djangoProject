@@ -30,4 +30,6 @@ def calcBTCPrice(amount, orderbook):
             break
         else:
             totalPrice += offer[0]*offer[1]
+    if amount > 0:
+        raise Exception('Bitcoins are out of stock')
     return round(totalPrice,2)
