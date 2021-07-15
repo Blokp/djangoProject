@@ -8,7 +8,7 @@ To run server locally, clone repo and run start_local.sh script. Installed Docke
  * Locally -
  curl -X POST -H "Content-Type: application/json" -d @test_file.json localhost:8000/zadanie1
  * On the server -
- curl -X POST -H "Content-Type: application/json" -d @test_file.json https://immense-depths-60108.herokuapp.com/zadanie1/
+ curl -X POST -H "Content-Type: application/json" -d @test_file.json https://invulnerable-moliere-06811.herokuapp.com/zadanie1/
  * Valid json for zadanie1
  ```json
 {
